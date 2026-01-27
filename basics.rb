@@ -139,30 +139,57 @@
 #         puts "#{id} is not a valid array number!"
 #     end
 # end
+# ================================================================================================================
+
+# print "Please enter price: "
+# price = gets.to_i
+# print "Enter QTY: "
+# qty = gets.to_i
+
+# subtotal = price * qty
+# puts "Subtotal: #{subtotal}"
+
+# if subtotal > 100
+#     discount = subtotal * 0.10
+#     puts "Discounted at 10%! Saved #{discount}"
+
+#     subtotal -= discount
+# else
+#     puts "No Discount applied"
+# end
+#     puts "subtotal: #{subtotal}"
+#     taxed = subtotal * 0.05
+#     puts "tax: - #{taxed}"
+#     total = subtotal - taxed
+#     puts "Total: #{total}"
 
 
-print "Please enter price: "
-price = gets.to_i
-print "Enter QTY: "
-qty = gets.to_i
+# shoes = {
+#   "summer" => "sandals",
+#   "winter" => "boots"
+# }
 
-subtotal = price * qty
-puts "Subtotal: #{subtotal}"
+# result = shoes.fetch("huh")
 
-if subtotal > 100
-    discount = subtotal * 0.10
-    puts "Discounted at 10%! Saved #{discount}"
+# puts "#{result}"
 
-    subtotal -= discount
-else
-    puts "No Discount applied"
+schools = {
+    "ASCS" => "Albuera South Central School",
+    "DGBZMSF" => "Dr. Geronimo B. Zaldivar Memorial School of Fisheries",
+    "EVSU" => "Eastern Visayas State University",
+    "VSU" => "Visayas State University"
+}
+loop do
+
+    result = schools.values
+        puts "#{result}"
+    print "please input new key: "
+    key = gets.chomp.to_s
+    print "please input new Value: "
+    value = gets.chomp.to_s
+    schools[key] = value 
+
 end
-    puts "subtotal: #{subtotal}"
-    taxed = subtotal * 0.05
-    puts "tax: - #{taxed}"
-    total = subtotal - taxed
-    puts "Total: #{total}"
-    
     
 
 
