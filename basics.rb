@@ -109,7 +109,6 @@
 # str_array = []
 # id = gets.chomp
 #     str_array.push(id)  
-
 # note: 
 # push - add to end 
 # unshift-add to first 
@@ -139,6 +138,17 @@
 #         puts "#{id} is not a valid array number!"
 #     end
 # end
+#
+######## print each with index ##########
+#
+# apps = ["Calculator", "Notes", "Clock"]
+# puts "\n--- Each With Index ---"
+# apps.each_with_index do |app, i|
+#   puts "#{i}. #{app}"
+# end
+#
+#
+#
 # ================================================================================================================
 
 # print "Please enter price: "
@@ -173,24 +183,62 @@
 
 # puts "#{result}"
 
-schools = {
-    "ASCS" => "Albuera South Central School",
-    "DGBZMSF" => "Dr. Geronimo B. Zaldivar Memorial School of Fisheries",
-    "EVSU" => "Eastern Visayas State University",
-    "VSU" => "Visayas State University"
-}
-loop do
 
-    result = schools.values
-        puts "#{result}"
-    print "please input new key: "
-    key = gets.chomp.to_s
-    print "please input new Value: "
-    value = gets.chomp.to_s
-    schools[key] = value 
+# schools = {
+#     :ASCS => "Albuera South Central School",
+#     :DGBZMS => "Dr. Geronimo B. Zaldivar Memorial School of Fisheries",
+#     :EVSU => "Eastern Visayas State University",
+#     :VSU => "Visayas State University"
+# }
 
-end
+# i = 0
+# loop do
+
+#     result = schools[:ASCS]
+#     puts "#{result}"
+
+#     i += 1
+#     puts "#{i}"
+#     if i >= 5
+#         break
+#     end
+# end
     
 
 
+# def number(x, y)
+#     sum = x * y
+#     return sum
+
+# end
+# print "Input number 1: "
+# input_1 = gets.chomp.to_i
+
+# print "Input number 2: "
+# input_2 = gets.chomp.to_i
+
+# puts number(input_1, input_2)
+
+# i = 1
+
+# until i > 5
+#     puts "#{i}"
+#     i += 1
+# end
+
+# array = [1,2,3,4]
+
+# result = array.map{ |n| n + 10}
+
+# puts(result)
+
+
+users = ["admin", "guest", "editor"]
+
+puts users.include?("admin")
+
+letters = users.find do |name|
+    name.length > 5
+    end
+puts "#{letters}"
 
