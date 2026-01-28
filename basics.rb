@@ -232,13 +232,144 @@
 
 # puts(result)
 
+# users = ["admin", "guest", "editor"]
 
-users = ["admin", "guest", "editor"]
+# puts users.include?("admin")
 
-puts users.include?("admin")
+# letters = users.find do |name|
+#     name.length > 5
+#     end
+# puts "#{letters}"
 
-letters = users.find do |name|
-    name.length > 5
+
+# name1, name2, name3
+# 0       1       2
+
+# Name1, name3
+# 0       1
+
+# 1 aray
+# [name1 name3, name4]
+
+# split
+# 2 arrays
+# [name1,] [ name3, name4, new name]
+# 0           0       1
+
+# name1, name2, name3, name4, name5
+
+# [name1, name2, name3, name4, name5]
+# [name1, nam2, name3] [name5]
+# new name= new name
+# array_1.push(new_name)
+
+# Add & Even using Method. 
+ 
+# def addition(x, y)
+#     sum = x + y
+#     return sum
+# end
+
+# print "Enter NUm 1: "
+# x = gets.chomp.to_i
+
+# print "Enter NUm 2: "
+# y = gets.chomp.to_i
+
+# num1 = addition(x, y)
+
+# puts "wow #{num1}"
+
+
+# Using pry-byebug gem
+# require 'pry-byebug'
+# def yell_greeting(string)
+#     name = string
+#     binding.pry
+
+#     name = name.upcase
+#     greeting = "WASSAP, #{name}!"
+#     puts greeting
+# end
+# yell_greeting("bob")
+
+# array = {
+#     "huh" => "huh2",
+#     "sige" => "sige2",
+#     "name" => "name2",
+#     "ambot" => "ambot",
+
+# }
+# array.each do |i, index|
+#     puts "#{index}, #{i}"
+# end
+#
+# reject in part using .reject method
+# friends = ['Sharon', 'Leo', 'Leila', 'Brian', 'Arun']
+# result = friends.reject { |friend| friend == 'Brian' }
+
+#     result.each_with_index do |invited|
+#     end
+
+# result.each { |hello| puts "Hello, " + hello}
+
+# friends = ['Sharon', 'Leo', 'Leila', 'Brian', 'Arun']
+
+# friends.each { |friend| puts friend.upcase}
+def do_reverse(data)
+    data.reverse_each do |names|
+        puts "#{names}"
     end
-puts "#{letters}"
+    
+end
+
+def do_each(data)
+    data.each_with_index do |names, index|
+        puts "#{index}. #{names}"
+    end
+
+end
+
+def do_select(data)
+    print "Select a name on the array: "
+    selected = gets.chomp.to_s
+    selection_result = data.find do |selected_name|
+        selected_name.upcase == selected.upcase
+    end
+
+    if selection_result.nil?
+        print "tarong!"
+    end
+    return selection_result
+end
+
+def do_reject
+
+
+end
+
+loop do
+  array = ["John","Mark","Kent","Carl","Josh"]
+
+    print "1 = reverse, 2 = each, 3 = select name, 4 = reject: \n"
+    print "select #: "
+    action = gets.chomp.to_i
+
+    case action
+    when 1
+        do_reverse(array)
+
+    when 2
+        do_each(array)
+
+    when 3
+        result = do_select(array)
+        print "#{result}\n"
+    when 4
+        do_reject
+
+    end
+end
+
+
 
