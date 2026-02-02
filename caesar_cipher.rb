@@ -1,20 +1,35 @@
+require "colorize"
 class CaesarCipher
-    def process(str, int){
+    def self.process(str, int)
+        shift = int % 26
+        lower = ('a'..'z').to_a.join
+        upper = lower.upcase
 
+        shift_low = lower.chars.rotate(shift).join
+        shift_up = upper.chars.rotate(shift).join
 
-    }
+        str.tr(lower + upper, shift_low + shift_up)
+    end
 
+    # kunohay gi decipher
+    def self.NegativeProcess(str, int)
+        process(str, -int)
+    end
 end
 
-start = caesar_cipher
+print "=====================================\n".yellow
+print "=== This is Caesar Cipher Project ===\n".yellow
+print "=====================================\n".yellow
+print "Input a string: "
+str = gets.chomp.to_s
 
+print "Input int (Shift):"
+int = gets.to_i ; print "\n"
 
-print "=== This is Caesar Cipher Project ==="
+cipher = CaesarCipher.process(str, int)
+puts "Cipher: "
+puts cipher.green
 
-print "Input a string: \n"
-str = gets.to_s
-
-print "Input int: \n"
-int =gets.to_i
-
-start.CaesarCipher(str, int)
+puts "Decipher: "
+decipher = CaesarCipher.NegativeProcess(str, 0)
+puts decipher.green
