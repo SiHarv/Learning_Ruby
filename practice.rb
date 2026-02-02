@@ -316,60 +316,67 @@
 # friends = ['Sharon', 'Leo', 'Leila', 'Brian', 'Arun']
 
 # friends.each { |friend| puts friend.upcase}
-def do_reverse(data)
-    data.reverse_each do |names|
-        puts "#{names}"
-    end
+# def do_reverse(data)
+#     data.reverse_each do |names|
+#         puts "#{names}"
+#     end
     
-end
+# end
 
-def do_each(data)
-    data.each_with_index do |names, index|
-        puts "#{index}. #{names}"
-    end
+# def do_each(data)
+#     data.each_with_index do |names, index|
+#         puts "#{index}. #{names}"
+#     end
 
-end
+# end
 
-def do_select(data)
-    print "Select a name on the array: "
-    selected = gets.chomp.to_s
-    selection_result = data.find do |selected_name|
-        selected_name.upcase == selected.upcase
-    end
+# def do_select(data)
+#     print "Select a name on the array: "
+#     selected = gets.chomp.to_s
+#     selection_result = data.find do |selected_name|
+#         selected_name.upcase == selected.upcase
+#     end
 
-    if selection_result.nil?
-        print "tarong!"
-    end
-    return selection_result
-end
+#     if selection_result.nil?
+#         print "tarong!"
+#     end
+#     return selection_result
+# end
 
-def do_reject
+# def do_reject
 
 
-end
+# end
 
-loop do
-  array = ["John","Mark","Kent","Carl","Josh"]
+# loop do
+#   array = ["John","Mark","Kent","Carl","Josh"]
 
-    print "1 = reverse, 2 = each, 3 = select name, 4 = reject: \n"
-    print "select #: "
-    action = gets.chomp.to_i
+#     print "1 = reverse, 2 = each, 3 = select name, 4 = reject: \n"
+#     print "select #: "
+#     action = gets.chomp.to_i
 
-    case action
-    when 1
-        do_reverse(array)
+#     case action
+#     when 1
+#         do_reverse(array)
 
-    when 2
-        do_each(array)
+#     when 2
+#         do_each(array)
 
-    when 3
-        result = do_select(array)
-        print "#{result}\n"
-    when 4
-        do_reject
+#     when 3
+#         result = do_select(array)
+#         print "#{result}\n"
+#     when 4
+#         do_reject
 
-    end
-end
+#     end
+# end
+teacher_mailboxes = [["Adam","Chris", "Dom","John","Paul", "Nick"],
+                     ["Kent","Morph","Bert","Thor","Maria","Nigga"]
+                    ]
+
+  puts teacher_mailboxes[1][1]
+
+
 
 
 
