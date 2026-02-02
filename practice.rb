@@ -370,11 +370,52 @@
 
 #     end
 # end
-teacher_mailboxes = [["Adam","Chris", "Dom","John","Paul", "Nick"],
-                     ["Kent","Morph","Bert","Thor","Maria","Nigga"]
-                    ]
 
-  puts teacher_mailboxes[1][1]
+# teacher_mailboxes2 = [["Adam","Chris", "Dom","John","Paul", "Nick"],
+#                      ["Kent","Morph","Bert","Thor","Maria","Nigga"]
+#                      ]
+
+# teacher_mailboxes2.each_with_index do |row, row_index|
+#   row.each_with_index do |teacher, column_index|
+#     puts "Row:#{row_index} Column:#{column_index} = #{teacher}"
+#   end
+# end
+
+
+# a = [1, [2, 3], [4, [5, 6]]]
+
+
+# # => [1, 2, 3, 4, 5, 6]
+# puts a
+# p a
+# p a.flatten
+# p a.flatten.inspect
+# p a.flatten.join(', ')
+# p a.flatten!
+
+# hash = {
+#     year: 2019,
+#     make: "Toyota",
+#     model: "Bettle"
+# }
+
+# p hash[:year]
+# # Krzy Nested hash
+
+# vehicles = {
+#   alice: {year: 2019, make: "Toyota", model: "Corolla"},
+#   blake: {year: 2020, make: "Volkswagen", model: "Beetle"},
+#   caleb: {year: 2020, make: "Honda", model: "Accord"}
+# }
+
+# p vehicles.dig[:nick][:year]
+
+# p vehicles[:blake][:make]
+
+# p vehicles[:caleb][:model]
+
+
+
 
 
 
