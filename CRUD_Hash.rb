@@ -1,19 +1,20 @@
+require "colorize"
+
 class StudentManager
   # huh??
   def initialize
     @students = {} 
   end
 
-
   def add_student(id, name)
     @students[id] = name
-    puts "Student added!"
+    puts "Student added!".green
   end
 
   def list_students
-    puts "--- Student List ---"
+    puts "--- Student List ---".green
     @students.each do |id, name|
-      puts "ID: #{id} | Name: #{name}"
+      puts "ID: #{id} | Name: #{name}".blue
     end
   end
 
@@ -21,16 +22,16 @@ class StudentManager
   def update_student(id, new_name)
     if @students.key?(id)
       @students[id] = new_name
-      puts "Update successful!"
+      puts "Update successful!".green
     else
-      puts "ID not found."
+      puts "ID not found.".red
     end
   end
 
   # 5. DELETE
   def delete_student(id)
     @students.delete(id)
-    puts "Student removed."
+    puts "Student removed.".red
   end
 end
 
@@ -38,8 +39,8 @@ manager = StudentManager.new
 
     i = 0
 loop do
-  puts "\n1. Add | 2. List | 3. Update | 4. Delete | 5. Exit"
-  print "Choose #: "
+  puts "\n1. Add | 2. List | 3. Update | 4. Delete | 5. Exit".yellow
+  print "Choose #: ".yellow
   choice = gets.chomp.to_i
 
 
@@ -60,6 +61,6 @@ loop do
   when 5
     break
   else
-    puts "Invalid choice."
+    puts "Invalid choice.".red
   end
 end
