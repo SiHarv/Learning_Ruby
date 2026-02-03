@@ -12,7 +12,7 @@ choices = [
 ]
 
 class StudentManager
-  # huh??
+
   def initialize
     @students = {} 
   end
@@ -47,7 +47,6 @@ class StudentManager
 
   # 4. DELETE
   def delete_student(id)
-    puts "#{id}"
     @students.delete(id)
     puts "Student with ID: ".red + "#{id}".white + " removed.!".red
   end
@@ -73,13 +72,11 @@ loop do
     manager.list_students
 
   when 3
-    manager.list_students
     selected = prompt.select("Choose student to delete: \n", manager.get_student_id, cycle: true)
     print "Enter new name: "; name = gets.chomp
     manager.update_student(selected, name)
 
   when 4
-    puts "Select student to be deleted: \n"
     selected = prompt.select("Choose student to delete: \n", manager.get_student_id, cycle: true)
     manager.delete_student(selected)
   
