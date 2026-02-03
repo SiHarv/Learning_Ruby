@@ -49,7 +49,7 @@ class StudentManager
   def delete_student(id)
     puts "#{id}"
     @students.delete(id)
-    puts "Student removed.".red
+    puts "Student with ID: ".red + "#{id}".white + " removed.!".red
   end
 end
 
@@ -79,9 +79,8 @@ loop do
     manager.update_student(id, name)
 
   when 4
-    # needs work!
+    puts "Select student to be deleted: \n"
     selected = prompt.select("Choose student to delete: \n", manager.get_student_id, cycle: true)
-    # print "Enter ID to delete: "; id = gets.chomp.to_i
     manager.delete_student(selected)
   
   when :quit
