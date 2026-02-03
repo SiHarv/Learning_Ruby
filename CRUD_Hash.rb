@@ -1,4 +1,15 @@
 require "colorize"
+require "tty-prompt"
+
+prompt = TTY::Prompt.new
+
+choices = [
+  { name: "1 - Add", value: 1 },
+  { name: "2 - List", value: 2 },
+  { name: "3 - Update", value: 3 },
+  { name: "4 - Delete", value: 4 },
+  { name: "Quit", value: :quit }
+]
 
 class StudentManager
   # huh??
@@ -18,7 +29,13 @@ class StudentManager
     end
   end
 
-  # 4. UPDATE
+  def get_student_id
+    choices = @students.map do |id, name|
+          { name: "#{id}. #{name}", value: id }
+    end
+  end
+
+  # 3. UPDATE
   def update_student(id, new_name)
     if @students.key?(id)
       @students[id] = new_name
@@ -28,8 +45,9 @@ class StudentManager
     end
   end
 
-  # 5. DELETE
+  # 4. DELETE
   def delete_student(id)
+    puts "#{id}"
     @students.delete(id)
     puts "Student removed.".red
   end
@@ -39,28 +57,43 @@ manager = StudentManager.new
 
     i = 0
 loop do
-  puts "\n1. Add | 2. List | 3. Update | 4. Delete | 5. Exit".yellow
-  print "Choose #: ".yellow
-  choice = gets.chomp.to_i
+  selection = prompt.select("Choose an option: \n", choices, cycle: true)
+  system('clear') || system('cls')
+  # puts "\n1. Add | 2. List | 3. Update | 4. Delete | 5. Exit".yellow
+  # print "Choose #: ".yellow
+  # choice = gets.chomp.to_i
 
-
-  case choice
+  case selection
   when 1
     print "Enter Name: "; name = gets.chomp
     i += 1
     manager.add_student(i, name)
+
   when 2
     manager.list_students
+
   when 3
+    manager.list_students
     print "Enter ID to update: "; id = gets.chomp.to_i
     print "Enter new name: "; name = gets.chomp
     manager.update_student(id, name)
+
   when 4
-    print "Enter ID to delete: "; id = gets.chomp.to_i
-    manager.delete_student(id)
-  when 5
+    # needs work!
+    selected = prompt.select("Choose student to delete: \n", manager.get_student_id, cycle: true)
+    # print "Enter ID to delete: "; id = gets.chomp.to_i
+    manager.delete_student(selected)
+  
+  when :quit
+    puts "Bye sir... ...".red
     break
   else
-    puts "Invalid choice.".red
+    puts "Unknown selection: #{selection.inspect}".red
   end
+
+  puts "\nPress Enter to return to the menu..."
+  STDIN.gets
+  # Clear previous CLI output
+  system('clear') || system('cls')
+
 end

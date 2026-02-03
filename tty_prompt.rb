@@ -13,12 +13,8 @@ choices = [
 loop do
   selection = prompt.select("Choose an option: \n", choices, cycle: true)
 
-  #Clear selected Case
-  # print "\e[1A\e[2K"
-
   # Clear previous CLI outputs
   system('clear') || system('cls')
-
 
   case selection
   when 1
