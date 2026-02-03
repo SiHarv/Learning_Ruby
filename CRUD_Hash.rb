@@ -74,9 +74,9 @@ loop do
 
   when 3
     manager.list_students
-    print "Enter ID to update: "; id = gets.chomp.to_i
+    selected = prompt.select("Choose student to delete: \n", manager.get_student_id, cycle: true)
     print "Enter new name: "; name = gets.chomp
-    manager.update_student(id, name)
+    manager.update_student(selected, name)
 
   when 4
     puts "Select student to be deleted: \n"
