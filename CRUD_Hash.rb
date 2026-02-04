@@ -25,7 +25,7 @@ class StudentManager
   def list_students
     puts "--- Student List ---".green
     @students.each do |id, name|
-      puts "ID: #{id} | Name: #{name}".blue
+      puts "ID: #{id} | Name: #{name}".yellow
     end
   end
 
@@ -81,7 +81,7 @@ loop do
     manager.delete_student(selected)
   
   when :quit
-    puts "Bye sir... ...".red
+    puts "Bye sir...".red
     break
   else
     puts "Unknown selection: #{selection.inspect}".red
